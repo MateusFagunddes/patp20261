@@ -14,7 +14,7 @@ public class Main extends Application {
         try {
 
             Parent root = FXMLLoader.load(
-                Main.class.getResource("/view/login/login.fxml")
+               getClass().getResource("/view/login/login.fxml")
             );
 
             Scene scene = new Scene(root);
@@ -32,3 +32,5 @@ public class Main extends Application {
         launch();
     }
 }
+
+

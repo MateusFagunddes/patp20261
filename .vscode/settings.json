@@ -1,6 +1,6 @@
 {
     "java.project.sourcePaths": [
-        "src"
+        "patp20261/gympro-admin/src/application"
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
