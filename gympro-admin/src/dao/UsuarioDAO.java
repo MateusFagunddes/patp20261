@@ -59,6 +59,53 @@ public class UsuarioDAO {
         return lista;
     }
 
+    public Usuario buscarPorEmail(String email) {
+        String sql = "SELECT * FROM usuarios WHERE email = ? LIMIT 1";
+
+        try {
+            Connection conn = Conexao.getConexao();
+            if (conn == null) {
+                return null;
+            }
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, email);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                Usuario usuario = new Usuario();
+                usuario.setId(rs.getInt("id"));
+                usuario.setNome(rs.getString("nome"));
+                usuario.setEmail(rs.getString("email"));
+                usuario.setSenha(rs.getString("senha"));
+                usuario.setStatus(rs.getString("status"));
+                return usuario;
+            }
+        } catch (Exception e) {
+            System.out.println("Erro ao buscar usuario por email: " + e.getMessage());
+        }
+
+        return null;
+    }
+
+    public boolean usuarioTemPerfil(int usuarioId, int perfilId) {
+        String sql = "SELECT 1 FROM usuario_perfil WHERE usuario_id = ? AND perfil_id = ? LIMIT 1";
+
+        try {
+            Connection conn = Conexao.getConexao();
+            if (conn == null) {
+                return false;
+            }
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, usuarioId);
+            stmt.setInt(2, perfilId);
+            ResultSet rs = stmt.executeQuery();
+            return rs.next();
+        } catch (Exception e) {
+            System.out.println("Erro ao verificar perfil do usuario: " + e.getMessage());
+            return false;
+        }
+    }
+
     // update
     public void atualizar(Usuario usuario) {
         String sql = "UPDATE usuarios SET nome=?, email=?, senha=?, status=? WHERE id=?";

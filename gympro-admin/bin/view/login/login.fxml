@@ -12,6 +12,7 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0"
             xmlns="http://javafx.com/javafx/26"
             xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.login.LoginController"
             style="-fx-background-color: linear-gradient(to bottom right, #1e1e2f, #2b2b40);">
 
     <children>
@@ -83,6 +84,7 @@
                 layoutX="165.0"
                 layoutY="325.0"
                 mnemonicParsing="false"
+            onAction="#onEntrar"
                 prefHeight="40.0"
                 prefWidth="120.0"
                 text="Entrar"
@@ -99,10 +101,13 @@
         <Button fx:id="btnCadastrar"
                 layoutX="315.0"
                 layoutY="325.0"
+                managed="false"
                 mnemonicParsing="false"
+            onAction="#onCadastrar"
                 prefHeight="40.0"
                 prefWidth="120.0"
                 text="Cadastrar"
+                visible="false"
                 style="
                     -fx-background-color: #2196F3;
                     -fx-text-fill: white;
