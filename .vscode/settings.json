@@ -1,10 +1,9 @@
 {
     "java.project.sourcePaths": [
-        "patp20261/gympro-admin/src/application"
+        "gympro-admin/src"
     ],
-    "java.project.outputPath": "bin",
+    "java.project.outputPath": "gympro-admin/bin",
     "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "/Users/gustavo/Documents/pasta jdk/javafx-sdk-26.0.1/lib/**/*.jar"
+        "gympro-admin/lib/**/*.jar"
     ]
 }
