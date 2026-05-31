@@ -1,14 +1,21 @@
 package controller.login;
 
+import controller.admin.DashboardController;
 import dao.UsuarioDAO;
 import entity.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import org.mindrot.jbcrypt.BCrypt;
+
+import java.io.IOException;
 
 public class LoginController {
     private static final int PERFIL_ADMIN_ID = 1;
@@ -58,7 +65,14 @@ public class LoginController {
             boolean liberarCadastro = usuarioDAO.usuarioTemPerfil(usuario.getId(), PERFIL_ADMIN_ID);
             btnCadastrar.setVisible(liberarCadastro);
             btnCadastrar.setManaged(liberarCadastro);
-            mostrar(Alert.AlertType.INFORMATION, "Login", "Login realizado com sucesso para " + usuario.getNome() + ".");
+            String perfilPrincipal = usuarioDAO.obterPerfilPrincipal(usuario.getId());
+            try {
+                abrirDashboard(usuario, perfilPrincipal);
+                Stage loginStage = (Stage) txtUsuario.getScene().getWindow();
+                loginStage.close();
+            } catch (IOException e) {
+                mostrar(Alert.AlertType.ERROR, "Login", "Erro ao abrir dashboard: " + e.getMessage());
+            }
             return;
         }
 
@@ -99,5 +113,17 @@ public class LoginController {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    private void abrirDashboard(Usuario usuario, String perfil) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/dashboard/dashboard.fxml"));
+        Parent root = loader.load();
+        DashboardController controller = loader.getController();
+        controller.configurar(usuario, perfil);
+
+        Stage stage = new Stage();
+        stage.setTitle("Dashboard - " + perfil);
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 }

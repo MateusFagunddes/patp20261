@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="560.0" prefWidth="980.0"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.admin.DashboardController"
+            style="-fx-background-color: linear-gradient(to bottom right, #111827, #1f2937);">
+
+    <left>
+        <VBox fx:id="sidebar" prefWidth="240.0" spacing="12.0" style="-fx-background-color: #0b1220; -fx-padding: 20;">
+            <children>
+                <HBox spacing="10.0">
+                    <children>
+                        <Label fx:id="lblBrand" text="GymPro">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                            <style>-fx-text-fill: white; -fx-font-weight: bold;</style>
+                        </Label>
+                        <Button fx:id="btnToggleSidebar" text="☰" onAction="#onToggleSidebar" style="-fx-background-color: #1f2937; -fx-text-fill: #e5e7eb; -fx-background-radius: 8;" />
+                    </children>
+                </HBox>
+
+                <Label fx:id="lblUsuario" text="Usuario" wrapText="true" style="-fx-text-fill: #d1d5db; -fx-font-size: 13px;" />
+                <Label fx:id="lblPerfil" text="Perfil" style="-fx-text-fill: #d1d5db; -fx-font-size: 13px;" />
+
+                <Button fx:id="btnDashboard" maxWidth="1.7976931348623157E308" text="⌂  Dashboard" onAction="#onAbrirHome" style="-fx-background-color: #1f2937; -fx-text-fill: #e5e7eb; -fx-font-weight: bold; -fx-background-radius: 8;" />
+                <Button fx:id="btnAlunos" maxWidth="1.7976931348623157E308" text="☺  Alunos" onAction="#onAbrirAlunos" style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-background-radius: 8;" />
+                <Button fx:id="btnPersonais" maxWidth="1.7976931348623157E308" text="⚙  Personais" onAction="#onAbrirPersonais" style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-background-radius: 8;" />
+                <Button fx:id="btnAvisos" maxWidth="1.7976931348623157E308" text="✉  Avisos" onAction="#onAbrirAvisos" style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-background-radius: 8;" />
+
+                <Button fx:id="btnSair" maxWidth="1.7976931348623157E308" text="↪  Sair" onAction="#onSair" style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+            </children>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="12.0" style="-fx-padding: 20;">
+            <children>
+                <VBox spacing="4.0" style="-fx-background-color: #111827; -fx-background-radius: 10; -fx-padding: 14;">
+                    <children>
+                        <Label fx:id="lblFrameTitulo" text="Dashboard">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                            <style>-fx-text-fill: white; -fx-font-weight: bold;</style>
+                        </Label>
+                        <Label fx:id="lblFrameSubtitulo" text="Visao geral" style="-fx-text-fill: #93c5fd; -fx-font-size: 13px;" />
+                    </children>
+                </VBox>
+
+                <StackPane fx:id="contentPane">
+                    <children>
+                        <VBox fx:id="homePane" spacing="14.0">
+                            <children>
+                                <HBox spacing="16.0">
+                                    <children>
+                                        <VBox prefWidth="170.0" spacing="6.0" style="-fx-background-color: #111827; -fx-background-radius: 10; -fx-padding: 14;">
+                                            <children>
+                                                <Label fx:id="lblMetrica1Titulo" text="Metrica 1" style="-fx-text-fill: #9ca3af; -fx-font-size: 13px;" />
+                                                <Label fx:id="lblMetrica1Valor" text="0" style="-fx-text-fill: #10b981; -fx-font-size: 28px; -fx-font-weight: bold;" />
+                                            </children>
+                                        </VBox>
+                                        <VBox prefWidth="170.0" spacing="6.0" style="-fx-background-color: #111827; -fx-background-radius: 10; -fx-padding: 14;">
+                                            <children>
+                                                <Label fx:id="lblMetrica2Titulo" text="Metrica 2" style="-fx-text-fill: #9ca3af; -fx-font-size: 13px;" />
+                                                <Label fx:id="lblMetrica2Valor" text="0" style="-fx-text-fill: #38bdf8; -fx-font-size: 28px; -fx-font-weight: bold;" />
+                                            </children>
+                                        </VBox>
+                                        <VBox prefWidth="170.0" spacing="6.0" style="-fx-background-color: #111827; -fx-background-radius: 10; -fx-padding: 14;">
+                                            <children>
+                                                <Label fx:id="lblMetrica3Titulo" text="Metrica 3" style="-fx-text-fill: #9ca3af; -fx-font-size: 13px;" />
+                                                <Label fx:id="lblMetrica3Valor" text="0" style="-fx-text-fill: #f59e0b; -fx-font-size: 28px; -fx-font-weight: bold;" />
+                                            </children>
+                                        </VBox>
+                                        <VBox prefWidth="170.0" spacing="6.0" style="-fx-background-color: #111827; -fx-background-radius: 10; -fx-padding: 14;">
+                                            <children>
+                                                <Label fx:id="lblMetrica4Titulo" text="Metrica 4" style="-fx-text-fill: #9ca3af; -fx-font-size: 13px;" />
+                                                <Label fx:id="lblMetrica4Valor" text="0" style="-fx-text-fill: #f97316; -fx-font-size: 28px; -fx-font-weight: bold;" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+
+                                <VBox spacing="8.0" style="-fx-background-color: #111827; -fx-background-radius: 10; -fx-padding: 14;">
+                                    <children>
+                                        <Label text="Avisos" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" />
+                                        <Label fx:id="lblAviso" text="Nenhum aviso" wrapText="true" style="-fx-text-fill: #e5e7eb; -fx-font-size: 14px;" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </StackPane>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

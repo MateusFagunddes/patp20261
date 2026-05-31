@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="12.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.admin.AvisoController" stylesheets="@/view/styles/admin-dark.css" styleClass="page-root">
+    <children>
+        <Label text="Avisos" styleClass="module-title">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+
+        <Label fx:id="lblStatus" text="" styleClass="toolbar-label" />
+
+        <HBox styleClass="toolbar-row">
+            <children>
+                <TextField fx:id="txtTitulo" promptText="Titulo" prefWidth="260.0" styleClass="field-dark" />
+                <ComboBox fx:id="cbPublico" prefWidth="140.0" styleClass="field-dark" />
+                <Button text="Publicar" onAction="#onPublicar" styleClass="btn-primary" />
+                <Region HBox.hgrow="ALWAYS" />
+            </children>
+        </HBox>
+
+        <TextArea fx:id="txtDescricao" promptText="Descricao" prefHeight="90.0" wrapText="true" styleClass="field-dark" />
+
+        <TableView fx:id="tblAvisos" prefHeight="360.0" prefWidth="780.0" styleClass="data-table">
+            <columns>
+                <TableColumn fx:id="colData" prefWidth="110.0" text="Data" />
+                <TableColumn fx:id="colTitulo" prefWidth="230.0" text="Titulo" />
+                <TableColumn fx:id="colPublico" prefWidth="110.0" text="Publico" />
+                <TableColumn fx:id="colAutor" prefWidth="180.0" text="Autor" />
+            </columns>
+        </TableView>
+
+        <HBox styleClass="footer-row">
+            <children>
+                <Label text="Historico de avisos" styleClass="footer-info" />
+            </children>
+        </HBox>
+    </children>
+</VBox>
