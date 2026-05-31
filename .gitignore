@@ -1,0 +1,32 @@
+# Compiled output
+bin/
+*.class
+*.jar
+*.war
+*.ear
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.log
+target/
+dist/
+build/
+
+# Dependencies
+node_modules/
+lib/mysql-connector-j-9.5.0/
+gympro-admin/lib/javafx-sdk-26.0.1/
+
+# Local environment
+.env
+*.local.json
