@@ -5,6 +5,7 @@
             "type": "java",
             "name": "Launch Main",
             "request": "launch",
+            "preLaunchTask": "Run GymPro JavaFX",
             "mainClass": "application.application.Main",
             "vmArgs": "--module-path lib/javafx-sdk-21.0.4/lib --add-modules javafx.controls,javafx.fxml"
         }

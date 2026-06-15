@@ -38,7 +38,8 @@
                 <TableColumn fx:id="colData" prefWidth="110.0" text="Data" />
                 <TableColumn fx:id="colTitulo" prefWidth="230.0" text="Titulo" />
                 <TableColumn fx:id="colPublico" prefWidth="110.0" text="Publico" />
-                <TableColumn fx:id="colAutor" prefWidth="180.0" text="Autor" />
+                <TableColumn fx:id="colAutor" prefWidth="160.0" text="Autor" />
+                <TableColumn fx:id="colAcoes" prefWidth="70.0" sortable="false" text="" />
             </columns>
         </TableView>
 

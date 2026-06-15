@@ -68,6 +68,18 @@
     -fx-background-radius: 6;
 }
 
+.btn-danger {
+    -fx-background-color: #ef4444;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+
+.btn-danger:hover {
+    -fx-background-color: #dc2626;
+}
+
 .data-table {
     -fx-background-color: #111827;
     -fx-control-inner-background: #111827;
@@ -118,6 +130,23 @@
     -fx-alignment: center-left;
 }
 
+.data-table .text-field-table-cell,
+.data-table .combo-box-table-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #f8fafc;
+}
+
+.data-table .text-field-table-cell .text-field,
+.data-table .combo-box-table-cell .combo-box {
+    -fx-background-color: #1f2937;
+    -fx-text-fill: #f8fafc;
+    -fx-prompt-text-fill: #94a3b8;
+    -fx-background-radius: 6;
+    -fx-border-color: #334155;
+    -fx-border-radius: 6;
+}
+
 .data-table .placeholder .label {
     -fx-text-fill: #94a3b8;
 }
@@ -140,4 +169,45 @@
 .footer-row {
     -fx-alignment: center-left;
     -fx-spacing: 8;
+}
+
+.app-dialog {
+    -fx-background-color: #111827;
+}
+
+.app-dialog:header .header-panel {
+    -fx-background-color: #0f172a;
+}
+
+.app-dialog:header .header-panel .label {
+    -fx-text-fill: #f8fafc;
+    -fx-font-size: 15px;
+    -fx-font-weight: 700;
+}
+
+.app-dialog > *.content.label {
+    -fx-text-fill: #e2e8f0;
+}
+
+.app-dialog .content {
+    -fx-background-color: #111827;
+}
+
+.app-dialog .label {
+    -fx-text-fill: #e2e8f0;
+}
+
+.app-dialog .button {
+    -fx-background-radius: 8;
+    -fx-font-weight: 700;
+}
+
+.app-dialog .button:default {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+}
+
+.app-dialog .button:cancel {
+    -fx-background-color: #1f2937;
+    -fx-text-fill: #e2e8f0;
 }

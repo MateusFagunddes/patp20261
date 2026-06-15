@@ -30,6 +30,8 @@
 
                 <Region HBox.hgrow="ALWAYS" />
 
+                <Button text="+ Novo Aluno" onAction="#onNovoAluno" styleClass="btn-primary" />
+
                 <HBox styleClass="toolbar-row" spacing="8.0">
                     <children>
                         <Label text="Search:" styleClass="toolbar-label" />
@@ -40,13 +42,14 @@
             </children>
         </HBox>
 
-        <TableView fx:id="tblAlunos" prefHeight="420.0" prefWidth="780.0" styleClass="data-table">
+        <TableView fx:id="tblAlunos" editable="true" prefHeight="420.0" prefWidth="780.0" styleClass="data-table">
             <columns>
                 <TableColumn fx:id="colNome" prefWidth="180.0" text="Nome" />
-                <TableColumn fx:id="colEmail" prefWidth="200.0" text="Email" />
+                <TableColumn fx:id="colEmail" editable="false" prefWidth="200.0" text="Email" />
                 <TableColumn fx:id="colTelefone" prefWidth="130.0" text="Telefone" />
                 <TableColumn fx:id="colObjetivo" prefWidth="180.0" text="Objetivo" />
                 <TableColumn fx:id="colStatus" prefWidth="90.0" text="Status" />
+                <TableColumn fx:id="colAcoes" prefWidth="120.0" sortable="false" text="Ações" />
             </columns>
         </TableView>
 
